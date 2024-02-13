@@ -9,21 +9,23 @@ const App = () => {
     setInput(e.target.value);
   };
 
-  const handleCalculateRelationship = () => {
+  const handleCalculateRelationship = (e) => {
+    e.preventDefault();
     
     if (!input1 || !input2) {
       setAnswer('Please Enter valid input');
       return;
     }
 
-    const commonLetters = input1.split('').filter(letter => input2.includes(letter));
-    const uniqueLetters1 = input1.split('').filter(letter => !input2.includes(letter));
-    const uniqueLetters2 = input2.split('').filter(letter => !input1.includes(letter));
+    const trimmedInput1 = input1.trim();
+    const trimmedInput2 = input2.trim();
+
+    const commonLetters = trimmedInput1.split('').filter(letter => trimmedInput2.includes(letter));
+    const uniqueLetters1 = trimmedInput1.split('').filter(letter => !trimmedInput2.includes(letter));
+    const uniqueLetters2 = trimmedInput2.split('').filter(letter => !trimmedInput1.includes(letter));
 
     const uniqueLettersCount1 = uniqueLetters1.length;
     const uniqueLettersCount2 = uniqueLetters2.length;
-
-    //const commonLettersCount = commonLetters.length;
 
     const sumOfLengths = uniqueLettersCount1 + uniqueLettersCount2;
     const modulusResult = sumOfLengths % 6;
