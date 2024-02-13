@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-const FlamesGame = () => {
+const App = () => {
   const [input1, setInput1] = useState('');
-  const [input2, setInput2] = use1State('');
+  const [input2, setInput2] = useState('');
   const [answer, setAnswer] = useState('');
 
   const handleInputChange = (e, setInput) => {
@@ -57,6 +57,8 @@ const FlamesGame = () => {
 
   return (
     <div>
+      <form>
+
       <input
         data-testid="input1"
         type="text"
@@ -76,8 +78,9 @@ const FlamesGame = () => {
         Clear
       </button>
       <h3 data-testid="answer">{answer}</h3>
+      </form>
     </div>
   );
 };
 
-export default APP;
+export default App;
