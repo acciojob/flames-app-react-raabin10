@@ -10,6 +10,7 @@ const App = () => {
   };
 
   const handleCalculateRelationship = () => {
+    
     if (!input1 || !input2) {
       setAnswer('Please Enter valid input');
       return;
@@ -22,7 +23,7 @@ const App = () => {
     const uniqueLettersCount1 = uniqueLetters1.length;
     const uniqueLettersCount2 = uniqueLetters2.length;
 
-    const commonLettersCount = commonLetters.length;
+    //const commonLettersCount = commonLetters.length;
 
     const sumOfLengths = uniqueLettersCount1 + uniqueLettersCount2;
     const modulusResult = sumOfLengths % 6;
