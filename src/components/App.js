@@ -70,7 +70,7 @@ const App = () => {
       />
       <input
         data-testid="input2"
-        type="text"
+        type="text" 
         value={name2}
         onChange={(e) => handleInputChange(e, setName2)}
       />
