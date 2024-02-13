@@ -66,11 +66,13 @@ const App = () => {
         data-testid="input1"
         type="text"
         value={name1}
+        placeholder='Enter first name'
         onChange={(e) => handleInputChange(e, setName1)}
       />
       <input
         data-testid="input2"
         type="text" 
+        placeholder='Enter second name'
         value={name2}
         onChange={(e) => handleInputChange(e, setName2)}
       />
