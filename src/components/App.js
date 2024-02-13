@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
 
 const App = () => {
-  const [input1, setInput1] = useState('');
-  const [input2, setInput2] = useState('');
+  const [name1, setName1] = useState('');
+  const [name2, setName2] = useState('');
   const [answer, setAnswer] = useState('');
 
-  const handleInputChange = (e, setInput) => {
-    setInput(e.target.value);
+  const handleInputChange = (e, setName) => {
+    setName(e.target.value);
   };
 
   const handleCalculateRelationship = (e) => {
     e.preventDefault();
     
-    if (!input1 || !input2) {
+    if (!name1 || !name2) {
       setAnswer('Please Enter valid input');
       return;
     }
 
-    const trimmedInput1 = input1.trim();
-    const trimmedInput2 = input2.trim();
+    const trimmedInput1 = name1.trim();
+    const trimmedInput2 = name2.trim();
 
     const commonLetters = trimmedInput1.split('').filter(letter => trimmedInput2.includes(letter));
     const uniqueLetters1 = trimmedInput1.split('').filter(letter => !trimmedInput2.includes(letter));
@@ -65,14 +65,14 @@ const App = () => {
       <input
         data-testid="input1"
         type="text"
-        value={input1}
-        onChange={(e) => handleInputChange(e, setInput1)}
+        value={name1}
+        onChange={(e) => handleInputChange(e, setName1)}
       />
       <input
         data-testid="input2"
         type="text"
-        value={input2}
-        onChange={(e) => handleInputChange(e, setInput2)}
+        value={name2}
+        onChange={(e) => handleInputChange(e, setName2)}
       />
       <button data-testid="calculate_relationship" onClick={handleCalculateRelationship}>
         Calculate Relationship
